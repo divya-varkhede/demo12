@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .fact {
+            font-size: 24px;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Bird Fact</h1>
+    <div class="fact" id="factDisplay"></div>
+    <button onclick="showRandomFact()">Show Another Fact</button>
+
+    <script>
+        const facts = [
+            "Birds are warm-blooded vertebrates that belong to the class Aves.",
+            "Most birds can fly, but some species, like ostriches and penguins, are flightless.",
+            "Birds have feathers, which are unique to their species and help with insulation and flight.",
+            "The smallest bird in the world is the bee hummingbird, measuring about 2.2 inches long.",
+            "Birds communicate using a variety of sounds, including songs, calls, and body language.",
+            "Many birds migrate long distances to find food and suitable breeding grounds.",
+            "Birds have a highly developed sense of vision, often seeing a wider range of colors than humans.",
+            "Some birds, like parrots and crows, are known for their intelligence and problem-solving abilities.",
+            "Birds lay eggs, which are often incubated until they hatch into chicks.",
+            "The largest bird in the world is the ostrich, which can grow up to 9 feet tall."
+        ];
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('factDisplay').innerText = facts[randomIndex];
+        }
+
+        // Show a random fact when the page loads
+        window.onload = showRandomFact;
+    </script>
+</body>
+</html>
